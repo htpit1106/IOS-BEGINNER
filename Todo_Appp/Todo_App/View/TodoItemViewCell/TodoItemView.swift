@@ -8,7 +8,7 @@
 import UIKit
 
 class TodoItemView: UITableViewCell {
-    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var timeLB: UILabel!
     @IBOutlet weak var categoryImv: UIImageView!
     @IBOutlet weak var titleLB: UILabel!
     @IBOutlet weak var checkBtn: UIButton!
@@ -37,9 +37,9 @@ class TodoItemView: UITableViewCell {
         titleLB.text = nil
         titleLB.textColor = .black
         
-        time.attributedText = nil
-        time.text = nil
-        time.textColor = .darkGray
+        timeLB.attributedText = nil
+        timeLB.text = nil
+        timeLB.textColor = .darkGray
         
         checkBtn.setImage(UIImage(named: "uncheck"), for: .normal)
         checkBtn.isEnabled = true
@@ -66,9 +66,9 @@ class TodoItemView: UITableViewCell {
             
             df.locale = Locale(identifier: "en_US_POSIX")
             df.dateFormat = "hh:mm a"
-            time.text = df.string(from: date)
+            timeLB.text = df.string(from: date)
         } else {
-            time.text = nil
+            timeLB.text = nil
         }
         
         let attributes: [NSAttributedString.Key: Any] = [
@@ -86,9 +86,9 @@ class TodoItemView: UITableViewCell {
                 string: todo.title ?? "",
                 attributes: attributes
             )
-            time.attributedText =
+            timeLB.attributedText =
                 NSAttributedString(
-                    string: time.text ?? "",
+                    string: timeLB.text ?? "",
                     attributes: attributes
                 )
             
