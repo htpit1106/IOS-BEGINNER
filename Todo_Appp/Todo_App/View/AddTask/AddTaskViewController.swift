@@ -75,6 +75,7 @@ class AddTaskViewController: UIViewController {
         )
 
         if let todo = todoUpdate {
+            addViewmodel.todoUpdate = todo
             UIUpdateTask(todo: todo)
             print(todo.time)
         } else {

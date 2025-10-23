@@ -42,8 +42,7 @@ class ViewController: UIViewController {
         pageController.currentPageIndicatorTintColor = .black
         pageController.pageIndicatorTintColor = .gray
 
-        pageController.layer.borderColor = UIColor.black.cgColor
-        pageController.layer.borderWidth = 1
+       
 
         safeArea.backgroundColor = UIColor(
             red: 0xDA / 255.0,

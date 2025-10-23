@@ -69,14 +69,12 @@ class HomeController: UIViewController {
                 if let vc = self?.storyboard?.instantiateViewController(
                     withIdentifier: "AddTaskViewController"
                 ) {
-                    self?.navigationController?.pushViewController(
-                        vc,
-                        animated: true
-                    )
+                    vc.modalPresentationStyle = .fullScreen // hoặc .pageSheet, .formSheet tùy kiểu hiển thị
+                                self?.present(vc, animated: true)
+                                                              
                 }
             })
             .disposed(by: disposeBag)
-
         // click cell to move updateViewController
         todoTableView.rx.modelSelected(Todo.self)
             .subscribe(onNext: { [weak self] todo in

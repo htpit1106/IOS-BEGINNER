@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3x5-qZ-z2B">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Todo_App2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcV-75-JB5">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="222"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="u8b-Bd-T98">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="222"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="October, 11 2025" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqi-fd-fbf">
+                                        <rect key="frame" x="120" y="76" width="153" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Todo List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jA-26-HWU">
+                                        <rect key="frame" x="114.66666666666669" y="106" width="164" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="u8b-Bd-T98" firstAttribute="top" secondItem="QcV-75-JB5" secondAttribute="top" id="0T2-E2-Dld"/>
+                                    <constraint firstItem="bqi-fd-fbf" firstAttribute="leading" secondItem="QcV-75-JB5" secondAttribute="leading" constant="120" id="1wb-54-icn"/>
+                                    <constraint firstAttribute="trailing" secondItem="u8b-Bd-T98" secondAttribute="trailing" id="6ZQ-dd-krP"/>
+                                    <constraint firstAttribute="trailing" secondItem="bqi-fd-fbf" secondAttribute="trailing" constant="120" id="Nt1-Kv-hJ1"/>
+                                    <constraint firstItem="0jA-26-HWU" firstAttribute="centerX" secondItem="QcV-75-JB5" secondAttribute="centerX" id="PCO-rg-PcQ"/>
+                                    <constraint firstItem="u8b-Bd-T98" firstAttribute="leading" secondItem="QcV-75-JB5" secondAttribute="leading" id="SDA-ED-lpH"/>
+                                    <constraint firstItem="bqi-fd-fbf" firstAttribute="top" secondItem="QcV-75-JB5" secondAttribute="top" constant="76" id="U2l-dA-Ydk"/>
+                                    <constraint firstItem="bqi-fd-fbf" firstAttribute="centerX" secondItem="QcV-75-JB5" secondAttribute="centerX" id="gzD-cH-Wkj"/>
+                                    <constraint firstAttribute="bottom" secondItem="u8b-Bd-T98" secondAttribute="bottom" id="ivz-bh-Ux1"/>
+                                    <constraint firstItem="0jA-26-HWU" firstAttribute="top" secondItem="bqi-fd-fbf" secondAttribute="bottom" constant="8" id="jd0-cL-5yg"/>
+                                    <constraint firstAttribute="height" constant="222" id="vQ6-sN-Xl7"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh0-4V-mBd">
+                                <rect key="frame" x="16" y="793.66666666666663" width="361" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add New Task">
+                                    <color key="baseBackgroundColor" red="0.2901960784" green="0.2156862745" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4VV-S6-sjK">
+                                <rect key="frame" x="16" y="172" width="361" height="605.66666666666663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yh0-4V-mBd" secondAttribute="trailing" constant="16" id="3KA-IV-mZk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4VV-S6-sjK" secondAttribute="trailing" constant="16" id="LtG-sd-Uf9"/>
+                            <constraint firstItem="4VV-S6-sjK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="P7z-hV-0wn"/>
+                            <constraint firstItem="yh0-4V-mBd" firstAttribute="top" secondItem="4VV-S6-sjK" secondAttribute="bottom" constant="16" id="Wbg-6N-pYz"/>
+                            <constraint firstItem="4VV-S6-sjK" firstAttribute="top" secondItem="QcV-75-JB5" secondAttribute="bottom" constant="-50" id="b1j-V2-c3D"/>
+                            <constraint firstItem="QcV-75-JB5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bCr-7s-FyA"/>
+                            <constraint firstItem="yh0-4V-mBd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eCk-Ct-gL6"/>
+                            <constraint firstAttribute="bottom" secondItem="yh0-4V-mBd" secondAttribute="bottom" constant="24" id="h8p-VV-pds"/>
+                            <constraint firstItem="QcV-75-JB5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pfV-5a-mYg"/>
+                            <constraint firstItem="QcV-75-JB5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tww-Jv-CAh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ElX-eH-hbF"/>
+                    <connections>
+                        <outlet property="addBtn" destination="yh0-4V-mBd" id="SrX-aH-5xk"/>
+                        <outlet property="titleAppLB" destination="0jA-26-HWU" id="QHu-UU-nzG"/>
+                        <outlet property="todayLB" destination="bqi-fd-fbf" id="x2A-Az-wmc"/>
+                        <outlet property="todoTableView" destination="4VV-S6-sjK" id="WM9-uZ-d1U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750.38167938931292" y="92.957746478873247"/>
+        </scene>
+        <!--AddTaskViewController-->
+        <scene sceneID="fpD-07-R2k">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="AddTaskViewController" storyboardName="AddTask" referencedIdentifier="AddTaskViewController" id="ZHL-Ko-VK1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="EJA-iD-1wX"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6YT-Kv-tQN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="93"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="obB-e5-94D">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3x5-qZ-z2B" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KYb-wV-yeo">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="v24-Pd-NZ1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fmI-WP-kWp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-176.33587786259542" y="92.957746478873247"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="header" width="390" height="222"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

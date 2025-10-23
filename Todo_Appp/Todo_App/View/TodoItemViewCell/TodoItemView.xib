@@ -64,7 +64,7 @@
             <connections>
                 <outlet property="categoryImv" destination="DAP-2A-jb5" id="Rf0-K9-xN2"/>
                 <outlet property="checkBtn" destination="eh4-T5-PsY" id="OZc-Yg-Kzk"/>
-                <outlet property="time" destination="I7s-u6-4bu" id="6SD-Tn-jiT"/>
+                <outlet property="timeLB" destination="I7s-u6-4bu" id="G5P-fc-xGN"/>
                 <outlet property="titleLB" destination="bZt-ps-ehK" id="dtu-Ga-HgU"/>
             </connections>
             <point key="canvasLocation" x="151.14503816793894" y="165.49295774647888"/>

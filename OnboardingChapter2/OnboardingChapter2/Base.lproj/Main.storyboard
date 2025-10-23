@@ -34,6 +34,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="SKIP">
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onPressSkipBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="swJ-8W-mKl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hf9-rc-pDT">
                                 <rect key="frame" x="243" y="723" width="118" height="48"/>
@@ -75,13 +78,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="ImageView" destination="A35-1j-fhQ" id="6Gk-k0-f9X"/>
-                        <outlet property="btnNext" destination="hf9-rc-pDT" id="SrR-0Q-CvW"/>
-                        <outlet property="btnSkip" destination="yLh-lP-9H9" id="cvP-8b-hOL"/>
-                        <outlet property="btnStart" destination="QC0-gM-K5S" id="MJb-cZ-HRI"/>
-                        <outlet property="describLabel" destination="ZFK-3J-0lE" id="oCK-Fe-B4l"/>
+                        <outlet property="bgImv" destination="A35-1j-fhQ" id="Np0-nA-8BY"/>
+                        <outlet property="describLabel" destination="ZFK-3J-0lE" id="x1t-eK-KDx"/>
+                        <outlet property="nextBtn" destination="hf9-rc-pDT" id="4Dz-sr-Ka0"/>
                         <outlet property="pageController" destination="0i5-Qv-c9D" id="bn2-EN-i9v"/>
                         <outlet property="safeArea" destination="8bC-Xf-vdC" id="lj2-e1-DHA"/>
+                        <outlet property="skipBtn" destination="yLh-lP-9H9" id="MnI-U1-cqj"/>
+                        <outlet property="startBtn" destination="QC0-gM-K5S" id="1M2-dt-wT1"/>
                         <outlet property="titleLabel" destination="91T-ok-6qI" id="L1L-ma-GF1"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="o06-KD-Xre"/>
                     </connections>
