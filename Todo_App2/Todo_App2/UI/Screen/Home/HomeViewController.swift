@@ -22,8 +22,22 @@ class HomeViewController: ViewController {
 
         //load du lieu tu supabase
         homViewmodel.fetchTodos()
-
+        setupEmptyView()
     }
+    
+    
+    // setup "no task" when todoTable is empty
+    
+    private func setupEmptyView() {
+        let label = UILabel()
+        label.text = "No Tasks"
+        label.textColor = .lightGray
+        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        todoTableView.backgroundView = label
+    }
+    
     override func setBindItems() {
         let dataSource = RxTableViewSectionedReloadDataSource<
             SectionModel<String, Todo>
@@ -53,6 +67,16 @@ class HomeViewController: ViewController {
             .bind(to: todoTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
+        /
+        homViewmodel.sections
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] sections in
+                guard let self = self else { return }
+                let isEmpty = sections.isEmpty || sections.allSatisfy { $0.items.isEmpty }
+                self.todoTableView.backgroundView?.isHidden = !isEmpty
+                
+            })
+            .disposed(by: disposeBag)
         // Hiển thị lỗi (nếu có)
         homViewmodel.errorMessage
             .subscribe(onNext: { [weak self] message in
