@@ -78,10 +78,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyH-mb-37V">
-                                <rect key="frame" x="16" y="783" width="361" height="45"/>
+                                <rect key="frame" x="16" y="788" width="361" height="40"/>
                                 <color key="backgroundColor" red="0.2901960784" green="0.2156862745" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="I3r-wU-MhL"/>
+                                    <constraint firstAttribute="height" constant="40" id="I3r-wU-MhL"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save">

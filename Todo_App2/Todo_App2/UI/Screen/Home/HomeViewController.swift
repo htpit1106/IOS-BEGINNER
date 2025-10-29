@@ -10,7 +10,6 @@ import RxSwift
 import UIKit
 
 class HomeViewController: ViewController {
-
     @IBOutlet weak var todayLB: UILabel!
     @IBOutlet weak var titleAppLB: UILabel!
     @IBOutlet weak var todoTableView: UITableView!
@@ -25,9 +24,7 @@ class HomeViewController: ViewController {
         setupEmptyView()
     }
     
-    
     // setup "no task" when todoTable is empty
-    
     private func setupEmptyView() {
         let label = UILabel()
         label.text = "No Tasks"
@@ -37,7 +34,7 @@ class HomeViewController: ViewController {
         label.numberOfLines = 0
         todoTableView.backgroundView = label
     }
-    
+
     override func setBindItems() {
         let dataSource = RxTableViewSectionedReloadDataSource<
             SectionModel<String, Todo>
@@ -50,7 +47,6 @@ class HomeViewController: ViewController {
                 else {
                     return UITableViewCell()
                 }
-
                 cell.layer.cornerRadius = 8
                 let cellViewModel = TodoCellViewmodel(todo: todo)
                 cell.bind(viewModel: cellViewModel)
@@ -62,22 +58,21 @@ class HomeViewController: ViewController {
             }
         )
 
-        // Bind dữ liệu sections → tableView
+        // Bind data sections → tableView
         homViewmodel.sections
             .bind(to: todoTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
-        /
         homViewmodel.sections
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] sections in
                 guard let self = self else { return }
-                let isEmpty = sections.isEmpty || sections.allSatisfy { $0.items.isEmpty }
+                let isEmpty =
+                    sections.isEmpty || sections.allSatisfy { $0.items.isEmpty }
                 self.todoTableView.backgroundView?.isHidden = !isEmpty
-                
             })
             .disposed(by: disposeBag)
-        // Hiển thị lỗi (nếu có)
+        // show error
         homViewmodel.errorMessage
             .subscribe(onNext: { [weak self] message in
                 let alert = UIAlertController(
@@ -118,7 +113,6 @@ class HomeViewController: ViewController {
                         vc,
                         animated: true
                     )
-
                 }
             })
             .disposed(by: disposeBag)
@@ -126,7 +120,6 @@ class HomeViewController: ViewController {
         todoTableView.rx.modelDeleted(Todo.self)
             .subscribe(onNext: { [weak self] todo in
                 guard let self = self else { return }
-
                 Task {
                     do {
                         try await self.homViewmodel.deleteTodo(todo)
@@ -157,7 +150,6 @@ class HomeViewController: ViewController {
         todoTableView.separatorColor = UIColor.lightGray.withAlphaComponent(
             0.05
         )
-
         // gan ui view cell cho table
         let nib = UINib(nibName: "TodoCell", bundle: nil)
         todoTableView.register(
@@ -173,7 +165,6 @@ class HomeViewController: ViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
     }
-
 }
 
 extension HomeViewController: UITableViewDelegate {
@@ -183,10 +174,7 @@ extension HomeViewController: UITableViewDelegate {
         forSection section: Int
     ) {
         guard let header = view as? UITableViewHeaderFooterView else { return }
-
         let title = header.textLabel?.text ?? ""
-
         header.textLabel?.textColor = .black
-
     }
 }

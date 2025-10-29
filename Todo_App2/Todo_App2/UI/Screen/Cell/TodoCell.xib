@@ -10,31 +10,34 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleAspectFill" restorationIdentifier="TodoCellViewController" id="iN0-l3-epB" customClass="TodoCellViewController" customModule="Todo_App2" customModuleProvider="target">
+        <view contentMode="scaleAspectFill" ambiguous="YES" restorationIdentifier="TodoCellViewController" id="iN0-l3-epB" customClass="TodoCellViewController" customModule="Todo_App2" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="344" height="80"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rjs-oG-BZv">
-                    <rect key="frame" x="16" y="16" width="48" height="48"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rjs-oG-BZv">
+                    <rect key="frame" x="16" y="16" width="50" height="48"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="48" id="iNH-S4-iOC"/>
-                        <constraint firstAttribute="width" constant="48" id="yPF-Dg-Wsc"/>
+                        <constraint firstAttribute="width" constant="50" id="6Qw-75-nIv"/>
+                        <constraint firstAttribute="height" constant="50" id="N1B-2R-6mW"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N45-P6-n03">
-                    <rect key="frame" x="76" y="16" width="220" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N45-P6-n03">
+                    <rect key="frame" x="78" y="15.999999999999998" width="194" height="20.333333333333329"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="4:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iby-gh-4ZQ">
-                    <rect key="frame" x="76" y="43" width="80" height="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iby-gh-4ZQ">
+                    <rect key="frame" x="78" y="42.333333333333336" width="100" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="ojV-5T-f3T"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="9Wh-Rv-T0h">
-                    <rect key="frame" x="292" y="21" width="48" height="38"/>
+                    <rect key="frame" x="280" y="11" width="48" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <buttonConfiguration key="configuration" style="plain" image="check"/>
                 </button>
@@ -42,12 +45,14 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Iby-gh-4ZQ" firstAttribute="top" secondItem="N45-P6-n03" secondAttribute="bottom" constant="6" id="32D-n3-gee"/>
-                <constraint firstItem="N45-P6-n03" firstAttribute="leading" secondItem="rjs-oG-BZv" secondAttribute="trailing" constant="12" id="Grc-im-bYW"/>
-                <constraint firstItem="rjs-oG-BZv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Rbi-5T-cdJ"/>
-                <constraint firstItem="Iby-gh-4ZQ" firstAttribute="leading" secondItem="N45-P6-n03" secondAttribute="leading" id="Taf-Ur-1Io"/>
-                <constraint firstItem="rjs-oG-BZv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="pep-aP-fsl"/>
-                <constraint firstItem="N45-P6-n03" firstAttribute="top" secondItem="rjs-oG-BZv" secondAttribute="top" id="xfz-Tg-zgw"/>
+                <constraint firstItem="Iby-gh-4ZQ" firstAttribute="top" secondItem="N45-P6-n03" secondAttribute="bottom" constant="6" id="1WB-JC-mgK"/>
+                <constraint firstAttribute="bottom" secondItem="rjs-oG-BZv" secondAttribute="bottom" constant="16" id="B8e-nh-nAO"/>
+                <constraint firstItem="rjs-oG-BZv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="NiW-E8-yHc"/>
+                <constraint firstItem="N45-P6-n03" firstAttribute="leading" secondItem="rjs-oG-BZv" secondAttribute="trailing" constant="12" id="PRH-1k-39f"/>
+                <constraint firstItem="Iby-gh-4ZQ" firstAttribute="leading" secondItem="rjs-oG-BZv" secondAttribute="trailing" constant="12" id="Rve-7C-hwr"/>
+                <constraint firstItem="N45-P6-n03" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="fmA-Db-PlG"/>
+                <constraint firstItem="rjs-oG-BZv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="kNO-XM-7tu"/>
+                <constraint firstItem="9Wh-Rv-T0h" firstAttribute="leading" secondItem="N45-P6-n03" secondAttribute="trailing" constant="8" id="qA6-4y-oDa"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
