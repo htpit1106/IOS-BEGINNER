@@ -109,6 +109,9 @@
                                 <buttonConfiguration key="configuration" style="filled" image="list" cornerStyle="capsule">
                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onListCategory:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="uds-Ue-9XC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPr-x8-2Hx">
                                 <rect key="frame" x="268" y="252" width="52" height="52"/>
@@ -120,6 +123,9 @@
                                 <buttonConfiguration key="configuration" style="filled" image="cup" cornerStyle="capsule">
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onCupCategory:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="L3B-cd-lxG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PN-TV-Js0">
                                 <rect key="frame" x="192" y="252" width="52" height="52"/>
@@ -131,6 +137,9 @@
                                 <buttonConfiguration key="configuration" style="filled" image="calendar" cornerStyle="capsule">
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="onCalendarCategory:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3qH-YW-Gsw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d5y-bB-DkG"/>
@@ -167,6 +176,16 @@
                             <constraint firstItem="mPr-x8-2Hx" firstAttribute="top" secondItem="6bq-T0-CVb" secondAttribute="bottom" constant="24" id="z1P-E6-B77"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calendarBtn" destination="4PN-TV-Js0" id="YIz-re-b3E"/>
+                        <outlet property="cupBtn" destination="mPr-x8-2Hx" id="QJU-1f-LSa"/>
+                        <outlet property="dateTF" destination="Ul6-SK-uhf" id="c6k-P1-T1l"/>
+                        <outlet property="listBtn" destination="qY4-55-3EH" id="CWa-O3-Yrr"/>
+                        <outlet property="notesTV" destination="Q8e-ed-TWc" id="2M1-A3-6Ce"/>
+                        <outlet property="saveBtn" destination="AyH-mb-37V" id="5oE-bP-Gv3"/>
+                        <outlet property="timeTF" destination="g4w-2n-9Il" id="ePj-zZ-KvU"/>
+                        <outlet property="titleTF" destination="6bq-T0-CVb" id="MbG-MX-G6z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

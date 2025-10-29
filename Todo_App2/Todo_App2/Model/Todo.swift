@@ -11,17 +11,17 @@ class Todo: Codable {
      var id: String?
      var title: String?
      var category: Category?
-     var created_at: String?
+     var created_at: Date?
      var content: String?
      var time: String?
-     var isComplete: Bool?
+     var isCompleted: Bool?
      var user_id: String?
 
     init(
         id: String? = nil,
         title: String? = nil,
         category: Category? = .list,
-        created_at: String? = nil,
+        created_at: Date? = nil,
         content: String? = nil,
         time: String? = nil,
         isComplete: Bool? = nil,
@@ -33,7 +33,7 @@ class Todo: Codable {
         self.created_at = created_at
         self.content = content
         self.time = time
-        self.isComplete = isComplete
+        self.isCompleted = isComplete
         self.user_id = user_id
     }
 

@@ -41,7 +41,7 @@
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eh4-T5-PsY">
                     <rect key="frame" x="268" y="21" width="48" height="38"/>
-                    <buttonConfiguration key="configuration" style="plain" image="uncheck"/>
+                    <buttonConfiguration key="configuration" style="plain" image="check"/>
                     <connections>
                         <action selector="pressBtnCheck:" destination="-1" eventType="touchUpInside" id="wQK-Ej-jqL"/>
                     </connections>
@@ -72,7 +72,7 @@
     </objects>
     <resources>
         <image name="calendar" width="48" height="48"/>
-        <image name="uncheck" width="24" height="24"/>
+        <image name="check" width="24" height="24.333333969116211"/>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -15,7 +15,7 @@ class HomeViewmodel {
     let todos = BehaviorRelay<[Todo]>(value: [])
     let errorMessage = PublishSubject<String>()
     // section: map data
-    
+
     static let shared = HomeViewmodel()
     private init() {}
 
@@ -29,8 +29,8 @@ class HomeViewmodel {
             let now = Date()
 
             // Chia todo ra
-            let uncompleted = todos.filter { !($0.isComplete ?? true) }
-            let completed = todos.filter { $0.isComplete ?? true}
+            let uncompleted = todos.filter { !($0.isCompleted ?? true) }
+            let completed = todos.filter { $0.isCompleted ?? true }
 
             // Gom nhóm các todo chưa hoàn thành theo thời gian
             let grouped = Dictionary(grouping: uncompleted) { todo -> String in
@@ -124,4 +124,95 @@ class HomeViewmodel {
             }
         }
     }
+    
+    //add new tasks
+    func addTodoRx(_ todo: Todo) -> Completable {
+        Completable.create { completable in
+            Task {
+                do {
+                    try await self.service.addTodo(todo)
+                    var list = self.todos.value
+                    list.append(todo)
+                    self.todos.accept(list)
+                    completable(.completed)
+                } catch {
+                    self.errorMessage.onNext(
+                        "Failed to add todo: \(error.localizedDescription)"
+                    )
+                    completable(.error(error))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
+    // update toggle check
+    func toggleCheckUpdate(todo: Todo) {
+        Task {
+            do {
+                // Gửi chính xác trạng thái hiện tại của todo (không negate)
+                try await service.updateCompleted(
+                    id: todo.id ?? "",
+                    isCompleted: todo.isCompleted ?? false
+                )
+
+                DispatchQueue.main.async {
+                    var list = self.todos.value
+                    if let index = list.firstIndex(where: { $0.id == todo.id }) {
+                        
+                        list[index] = todo
+                        self.todos.accept(list)
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    self.errorMessage.onNext(
+                        "Failed to load todos: \(error.localizedDescription)"
+                    )
+                }
+            }
+        }
+    }
+    
+    func updateTodoRx(_ todo: Todo) -> Completable {
+        Completable.create { completable in
+            Task {
+                do {
+                    try await self.service.updateTodo(todo)
+                    var list = self.todos.value
+                    if let index = list.firstIndex(where: { $0.id == todo.id })
+                    {
+                        list[index] = todo
+                        self.todos.accept(list)
+                    }
+                    completable(.completed)
+                } catch {
+                    self.errorMessage.onNext(
+                        "Failed to update todo: \(error.localizedDescription)"
+                    )
+                    completable(.error(error))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
+    
+    func deleteTodo (_ todo: Todo) {
+        guard let id = todo.id else {
+            return
+        }
+        
+        Task {
+            do {
+                try await service.deleteTodo(id: id)
+                var list = todos.value
+                list.removeAll() { $0.id == id }
+                self.todos.accept(list)
+            } catch {
+                errorMessage.onNext("Fail to delete \(error.localizedDescription)")
+            }
+        }
+    }
+
 }

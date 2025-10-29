@@ -20,15 +20,14 @@ import UIKit
 class TableViewCell: UITableViewCell {
     var disposeBag =  DisposeBag()
     
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         disposeBag =  DisposeBag()
     }
     
-    func bind(viewModel: CellViewModel) {
-        
-    }
-    func setupUI() {
+
+    func bind(viewModel: CellViewModel){
         
     }
 }

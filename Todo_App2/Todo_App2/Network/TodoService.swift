@@ -23,15 +23,15 @@ class TodoService {
     private let client = supabase
 
     func fetchTodos() async throws -> [Todo] {
-//        guard let user = try? await supabase.auth.session.user else {
-//            return []
-//        }
+        guard let user = try? await supabase.auth.session.user else {
+            return []
+        }
 
         let todos: [Todo] =
             try await supabase
             .from("todo_list")
             .select()
-//            .eq("user_id", value: user.id)
+            .eq("user_id", value: user.id)
             .execute()
             .value
 
